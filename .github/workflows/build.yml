@@ -6,7 +6,7 @@ on:
 
 jobs:
   second:
-    uses: ZIMO-Elektronik/.github-workflows/.github/workflows/x86_64-linux-gnu-gcc.yml@upload-artifact
+    uses: ZIMO-Elektronik/.github-workflows/.github/workflows/x86_64-linux-gnu-gcc.yml@v0.0.8
     with:
       pre-build: |
         sudo apt update -y
