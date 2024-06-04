@@ -2,37 +2,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Doxygen",
+      "label": "act x86_64-linux-gnu-gcc",
       "type": "shell",
       "isBackground": true,
-      "options": {
-        "cwd": "${workspaceFolder}/docs"
-      },
-      "command": "doxygen Doxyfile"
-    },
-    {
-      "label": "CMake PitchforkTests Clang",
-      "type": "shell",
-      "isBackground": true,
-      "command": "cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=CMakeModules/cmake/toolchain-clang.cmake"
-    },
-    {
-      "label": "CMake PitchforkTests",
-      "type": "shell",
-      "isBackground": true,
-      "command": "cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Debug"
-    },
-    {
-      "label": "Ninja PitchforkTests",
-      "type": "shell",
-      "isBackground": true,
-      "command": "ninja -C build PitchforkTests"
-    },
-    {
-      "label": "Run PitchforkTests",
-      "type": "shell",
-      "isBackground": true,
-      "command": "./build/tests/PitchforkTests"
+      "command": "act --artifact-server-path build -j x86_64-linux-gnu-gcc --input pre-build=\"sudo apt update -y && sudo apt install -y ninja-build\" --input upload-artifact=true"
     }
   ]
 }
