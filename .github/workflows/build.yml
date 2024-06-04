@@ -1,0 +1,8 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  x86_64-linux-gnu-gcc:
