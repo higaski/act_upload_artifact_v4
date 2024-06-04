@@ -5,4 +5,11 @@ on:
     branches: [master]
 
 jobs:
-  x86_64-linux-gnu-gcc:
+  second:
+    uses: ZIMO-Elektronik/.github-workflows/.github/workflows/x86_64-linux-gnu-gcc.yml@upload-artifact
+    with:
+      pre-build: |
+        sudo apt update -y
+        sudo apt install -y ninja-build
+      args: -GNinja -DCMAKE_BUILD_TYPE=Release
+      upload-artifact: true

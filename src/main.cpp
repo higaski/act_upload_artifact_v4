@@ -1,3 +1,3 @@
 #include <cstdio>
 
-int main() { printf("Hello test_artifact_v4\"); }
+int main() { printf("Hello test_artifact_v4\n"); }
