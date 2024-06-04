@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug PitchforkTests",
+      "name": "Debug Z21Tests",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/tests/PitchforkTests",
+      "program": "${workspaceFolder}/build/tests/Z21Tests",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
@@ -19,13 +19,6 @@
           "ignoreFailures": false
         }
       ]
-    },
-    {
-      "name": "Python: Current File",
-      "type": "python",
-      "request": "launch",
-      "program": "${file}",
-      "console": "integratedTerminal"
-    },
+    }
   ]
 }

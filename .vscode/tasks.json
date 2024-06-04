@@ -5,7 +5,7 @@
       "label": "act x86_64-linux-gnu-gcc",
       "type": "shell",
       "isBackground": true,
-      "command": "act --artifact-server-path build -j x86_64-linux-gnu-gcc --input pre-build=\"sudo apt update -y && sudo apt install -y ninja-build\" --input upload-artifact=true"
+      "command": "act -v --artifact-server-path build -j x86_64-linux-gnu-gcc"
     }
   ]
 }

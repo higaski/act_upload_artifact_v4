@@ -1,15 +1,19 @@
 name: build
 
 on:
-  push:
-    branches: [master]
+  workflow_call:
 
 jobs:
   x86_64-linux-gnu-gcc:
-    uses: ZIMO-Elektronik/.github-workflows/.github/workflows/x86_64-linux-gnu-gcc.yml@v0.0.8
-    with:
-      pre-build: |
-        sudo apt update -y
-        sudo apt install -y ninja-build
-      args: -GNinja -DCMAKE_BUILD_TYPE=Release
-      upload-artifact: true
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4.1.6
+        with:
+          fetch-depth: 0
+      - run: cmake -Bbuild -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --parallel
+      - run: tar -cvf build.tar build
+      - uses: actions/upload-artifact@v4.3.3
+        with:
+          name: build.tar
+          path: build.tar
